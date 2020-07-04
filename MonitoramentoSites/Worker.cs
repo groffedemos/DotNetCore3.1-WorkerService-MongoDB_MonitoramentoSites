@@ -33,7 +33,7 @@ namespace MonitoramentoSites
                 _configuration.GetConnectionString("BaseMonitoramentoSites"));
             var db = mongoClient.GetDatabase("DBMonitoramento");
             var disponibilidadeCollection =
-                db.GetCollection<ResultadoMonitoramento>("Disponibilidade");
+                db.GetCollection<ResultadoMonitoramento>("DisponibilidadeAmbienteNuvem");
 
             while (!stoppingToken.IsCancellationRequested)
             {
