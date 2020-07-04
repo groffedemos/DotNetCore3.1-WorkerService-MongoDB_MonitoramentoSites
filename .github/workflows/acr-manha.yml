@@ -26,7 +26,7 @@ jobs:
       env:
         NOME_IMAGEM: monitoramento-sites
       run: |
-        cd ./ MonitoramentoSites
+        cd ./MonitoramentoSites
         docker build . --file Dockerfile --tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ env.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER
         docker tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ env.NOME_IMAGEM }}:$GITHUB_RUN_NUMBER ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ env.NOME_IMAGEM }}:latest
         docker push ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/${{ env.NOME_IMAGEM }}
